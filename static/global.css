@@ -1,0 +1,11 @@
+:root {
+  --link-color: var(--indigo);
+  --headings-font-weight: var(--font-weight-bold);
+  --code-font-size: var(--fonts-4);
+  --body-bg-color: var(--gray-0);
+}
+
+code {
+  line-height: 1.5rem;
+}
+
