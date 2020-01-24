@@ -1,5 +1,9 @@
 <script>
+  const fs = require("fs");
+  import marked from "marked";
 
+  const mdGlobalCode = fs.readFileSync("src/routes/global.md", "utf8");
+  let globalCode = marked(mdGlobalCode);
 </script>
 
 <style>
@@ -10,14 +14,46 @@
   <title>✂️trim-css</title>
 </svelte:head>
 
-<h1>✂️ Trim CSS Tester</h1>
-<p>A sample page to make sure Trim behaves well while under development.</p>
-<ul grid columns="8" gap="8" mt="8">
+<h1>Trim Style System ✂️</h1>
+<ul grid columns="8" gap="8" my="9">
   <li cell span="2">
-    <h2>Grid</h2>
+    <h2 mb="4">
+      Light and forward thinking CSS library that uses attributes and variables
+      for rapid theme prototyping.
+    </h2>
+    <ul mb="6">
+      <li>⚡️ Light at &lt;10kb gzipped</li>
+      <li>⛔️ No preprocessor required</li>
+      <li>📐 Powerful grids & flexbox</li>
+      <li>🌈 Customizable CSS variables</li>
+    </ul>
+    <a button href="https://unpkg.com/trim-css@0.0.2/dist/trim.min.css" mr="4">
+      Download
+    </a>
+    <a button type="outline" href="https://github.com/atav1k/trim/pull/1">
+      Contribute
+    </a>
+    <p mt="4">
+      Trim draws syntactically from experimental frameworks like Raster and
+      Shoelace. It uses CSS attributes to define components and utilities rather
+      than classes, resembling JS props. For theming it relies on CSS variables
+      which allows for rapid theme prototyping.
+    </p>
+  </li>
+  <li cell span="4">
+    <h2>Site variables</h2>
+    {@html globalCode}
+  </li>
+</ul>
+
+<h1 my="9">Utilities</h1>
+<ul grid columns="8" gap="8" my="9">
+  <li cell span="2">
+    <h2>Grid.css</h2>
     <p>
-      Specifiy any number of columns within a grid from 1 to 24. Cells are
-      initialized to one column but can span many.
+      Specifiy any number of grid columns from 1 to 24. Cells are initialized to
+      one column but can span many. Default responsive behavior has all columns
+      collapse to full width.
     </p>
     <code>
       &lt;ul grid columns="8" gap="2" /&gt;
@@ -47,7 +83,7 @@
       <li cell span="6" bg="gray3" p="4">6</li>
     </ul>
     <h2>6 column with grid gap</h2>
-    <ul grid mb="8" columns="6" class="h3" gap="4">
+    <ul grid columns="6" class="h3" gap="4">
       <li cell bg="gray3" p="4">cell</li>
       <li cell bg="gray4" p="4">cell</li>
       <li cell bg="gray3" p="4">cell</li>
@@ -58,15 +94,14 @@
   </li>
 </ul>
 
-<ul grid columns="8" gap="8" mt="8">
+<ul grid columns="8" gap="8" my="9">
   <li cell span="2">
-    <h2>Color</h2>
-    <p>Use open color for background and body.</p>
+    <h2>Color.css</h2>
     <code>&lt;div color="white" bg="black" /&gt;</code>
   </li>
   <li cell span="6">
     <h2>Background</h2>
-    <ul grid mb="8" columns="2" class="h3" gap="2">
+    <ul grid columns="2" class="h3" gap="2">
       <li cell bg="white" p="3">white</li>
       <li cell bg="black" color="white" p="3">black</li>
       <li cell bg="gray0" p="3">gray0</li>
@@ -95,10 +130,9 @@
   </li>
 </ul>
 
-<ul grid columns="8" gap="8" mt="8">
+<ul grid columns="8" gap="8" my="9">
   <li cell span="2">
-    <h2>Positioning</h2>
-    <p>Use margin and padding.</p>
+    <h2>Position.css</h2>
     <code>&lt;h1 mx="4 sm2" my="sm2" p="2" /&gt;</code>
   </li>
   <li cell span="6">
@@ -116,14 +150,105 @@
   </li>
 </ul>
 
-<ul grid columns="8" gap="8" mt="8">
+<h1 my="9">Components</h1>
+<ul grid columns="8" gap="8" my="9">
   <li cell span="2">
-    <h2>Text</h2>
-    <p>Use margin and padding.</p>
+    <h2>Alert.css</h2>
+    <code>&lt;div alert type="primary" /&gt;</code>
+  </li>
+  <li cell span="6">
+    <h2>Variations</h2>
+    <ul grid gap="2" columns="1">
+      <div alert>Alert</div>
+      <div alert type="secondary">Alert</div>
+      <div alert type="success">Alert</div>
+      <div alert type="info">Alert</div>
+      <div alert type="warning">Alert</div>
+      <div alert type="danger">Alert</div>
+      <div alert type="disabled">Alert</div>
+    </ul>
+  </li>
+</ul>
+
+<ul grid columns="8" gap="8" my="9">
+  <li cell span="2">
+    <h2>Button.css</h2>
+    <code>&lt;a button type="outline" href="." /&gt;</code>
+  </li>
+  <li cell span="6">
+    <h2>Variations</h2>
+    <ul grid columns="2" gap="2" flow="column" rows="5">
+      <div button>Button</div>
+      <div button disabled>Button</div>
+      <div button type="outline">Button</div>
+      <div button type="link">Button</div>
+      <div button type="disabled">Button</div>
+      <div button type="secondary">Button</div>
+      <div button type="success">Button</div>
+      <div button type="info">Button</div>
+      <div button type="warning">Button</div>
+      <div button type="danger">Button</div>
+    </ul>
+  </li>
+</ul>
+
+<ul grid columns="8" gap="8" my="9">
+  <li cell span="2">
+    <h2>Chip.css</h2>
+    <code>&lt;div chip type="primary" /&gt;</code>
+  </li>
+  <li cell span="6">
+    <h2>Variations</h2>
+    <ul grid columns="6" gap="2" flow="column" rows="4">
+      <div chip>Chip</div>
+      <div chip type="primary">Chip</div>
+      <div chip type="secondary">Chip</div>
+      <div chip type="success">Chip</div>
+      <div chip type="info">Chip</div>
+      <div chip type="warning">Chip</div>
+      <div chip type="danger">Chip</div>
+      <div chip type="disabled">Chip</div>
+    </ul>
+  </li>
+</ul>
+
+<ul grid columns="8" gap="8" my="9">
+  <li cell span="2">
+    <h2>Tab.css</h2>
+    <code>&lt;div tab type="full"&gt;&lt;a /&gt;&lt;/div&gt;</code>
+  </li>
+  <li cell span="6">
+    <h2>Variations</h2>
+    <ul grid columns="2" gap="2" flow="column" rows="3">
+      <div tab>
+        <a href=".">Tab 1</a>
+        <a href="." class="active">Active 2</a>
+        <a href=".">Tab 3</a>
+        <a href=".">Tab 4</a>
+      </div>
+      <div tab type="simple">
+        <a href=".">Simple 1</a>
+        <a href=".">Simple 2</a>
+        <a href="." class="active">Simple 3</a>
+        <a href=".">Simple 4</a>
+      </div>
+      <div tab type="full">
+        <a href=".">Full 1</a>
+        <a href=".">Full 2</a>
+        <a href=".">Full 3</a>
+        <a href="." class="active">Full 4</a>
+      </div>
+    </ul>
+  </li>
+</ul>
+
+<ul grid columns="8" gap="8" my="9">
+  <li cell span="2">
+    <h2>Text.css</h2>
   </li>
   <li cell span="6">
     <h2>Headings</h2>
-    <ul grid mb="8" columns="2" gap="2" flow="column" rows="6">
+    <ul grid columns="2" gap="2" flow="column" rows="6">
       <li cell>
         <h1>Header 1</h1>
       </li>
@@ -156,6 +281,12 @@
       </li>
       <li cell>
         <b>Bold</b>
+      </li>
+      <li>
+        <div tooltip>
+          tooltip
+          <div tip>Some overlay text here</div>
+        </div>
       </li>
     </ul>
   </li>

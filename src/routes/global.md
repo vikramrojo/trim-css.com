@@ -1,3 +1,4 @@
+```
 :root {
   --body-bg-color: var(--gray-0);
   --body-line-height: 1.5;
@@ -10,8 +11,4 @@
   --headings-font-weight: var(--font-weight-bold);
   --headings-line-height: 1.25;
 }
-
-code {
-  line-height: 1.5rem;
-}
-
+```
