@@ -214,6 +214,73 @@
 
 <ul grid columns="8" gap="8" my="9">
   <li cell span="2">
+    <h2>Form.css</h2>
+  </li>
+  <li cell span="6">
+    <h2>Fields</h2>
+    <ul grid columns="2" gap="2" mb="2">
+      <li cell>
+        <label>
+          <input type="checkbox" />
+          Checkbox
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" />
+          Checkbox
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" />
+          Checkbox
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" />
+          Radio
+        </label>
+        <br />
+        <label>
+          <input type="radio" />
+          Radio
+        </label>
+        <br />
+        <label>
+          <input type="radio" />
+          Radio
+        </label>
+      </li>
+    </ul>
+    <ul grid columns="2" gap="2" flow="column" rows="3">
+      <li cell>
+        <select>
+          <option>Item</option>
+          <option>Item</option>
+          <option>Item</option>
+        </select>
+      </li>
+      <li cell>
+        <input type="number" />
+      </li>
+      <li cell>
+        <input type="file" />
+      </li>
+      <li cell>
+        <input type="password" />
+      </li>
+      <li cell>
+        <input type="time" />
+      </li>
+      <li cell>
+        <textarea />
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ul grid columns="8" gap="8" my="9">
+  <li cell span="2">
     <h2>Tab.css</h2>
     <code>&lt;div tab type="full"&gt;&lt;a /&gt;&lt;/div&gt;</code>
   </li>
