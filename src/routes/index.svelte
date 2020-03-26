@@ -27,10 +27,10 @@
       <li>📐 Powerful grids & flexbox</li>
       <li>🌈 Customizable CSS variables</li>
     </ul>
-    <a button href="https://unpkg.com/trim-css@0.0.2/dist/trim.min.css" mr="4">
+    <a button href="https://unpkg.com/trim-css@0.0.6/dist/trim.min.css" mr="4">
       Download
     </a>
-    <a button type="outline" href="https://github.com/atav1k/trim/pull/1">
+    <a button type="outline" href="https://github.com/atav1k/trim">
       Contribute
     </a>
     <p mt="4">
