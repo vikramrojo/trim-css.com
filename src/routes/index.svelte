@@ -60,7 +60,7 @@
       <br />
       &nbsp;&nbsp;&lt;li cell span="8" /&gt;
       <br />
-      &lt;/grid&gt;
+      &lt;/ul&gt;
     </code>
   </li>
   <li cell span="6">
