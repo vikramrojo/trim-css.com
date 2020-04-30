@@ -1,8 +1,9 @@
+```
 :root {
   --body-bg-color: var(--gray-0);
   --body-line-height: 1.5;
   --button-font-size: var(--fonts-4);
-  --component-padding: 1rem;
+  --button-padding: 1rem;
   --button-font-weight: var(--font-weight-bold);
   --button-border-width: 0.125rem;
   --code-font-size: var(--fonts-4);
@@ -10,14 +11,4 @@
   --headings-font-weight: var(--font-weight-bold);
   --headings-line-height: 1.25;
 }
-
-code {
-  line-height: 1.5rem;
-}
-
-@media screen and (max-width: 48rem) {
-  * {
-    white-space: normal;
-    word-break: break-word;
-  }
-}
+```
